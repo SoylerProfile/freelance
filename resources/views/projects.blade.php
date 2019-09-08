@@ -238,7 +238,7 @@
 </tbody></table>
 </ul>
 </div>
-<a class="btn btn-default btn-sm" href="https://freelancehunt.com/mailbox" id="unread-messages-link">
+<a class="btn btn-default btn-sm" href="/mailbox" id="unread-messages-link">
 <i class="fa fa-envelope-o"></i> <span class="hidden-xs">Сообщения</span>
 <span class="label color-blue hidden" data-unread-message-count="">0</span>
 </a>
@@ -306,7 +306,7 @@
 <div class="col-md-12">
 <h1>
 Все фриланс проекты
-<span class="label label-green with-tooltip" title="" data-original-title="Найдено 591 проект, показаны проекты 1-15">591</span>
+<span class="label label-green with-tooltip" title="" data-original-title="Найдено 591 проект, показаны проекты 1-15">{{ count($projectsData) }}</span>
 <a href="/projects" class="no-underline"><span class="label label-danger with-tooltip" title="" data-original-title="Сбросить фильтр">фильтр активен</span></a>
 </h1>
 </div>
@@ -316,470 +316,47 @@
 <div id="projects-html" data-is-filter-active="1" data-page="1">
 <table class="table table-normal project-list" data-last-updated="1567923610">
 <tbody>
-<tr style="vertical-align: top;" class="featured" data-published="1567869970">
-<td class="left" colspan="5">
-<span class="label color-orange with-tooltip" title="" style="font-size: 70%" data-original-title="Премиум-проект"><i class="fa fa-star"></i><span class="hidden-xs"> премиум</span></span>
-<a href="https://freelancehunt.com/project/uchastie-razrabotke-platformyi-po-obmenu/542041.html" title="" class="visitable " data-original-title="Работа на долгий срок. Стоимость указана за тестовое задание.
+
+@foreach ($projectsData as $projectData)
+    <tr style="vertical-align: top" data-published="1567875349">
+        <td class="left">
+        <a href="/project/{{ $projectData->id }}.html" title="" class="bigger visitable" data-original-title="Доброго времени суток.
 
 
-Расскажите подробнее о своем опыте по навыкам из списка:React...">Участие в разработке платформы по обмену криптовалюты [React]</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<p style="font-size: 14px; word-break: break-all">
-Работа на долгий срок. Стоимость указана за тестовое задание.
-Расскажите подробнее о своем опыте по навыкам из списка:React 16.8+ с использованием hook’овstyled-componentsredux и redux-saga
-</p>
-<div style="line-height: 36px;">
-<div class="pull-right">
-<div class="text-green price with-tooltip" data-placement="top" title="" data-original-title="≈1 050₴">
-3 000 <span>₽</span>
-</div>
-</div>
-<div style="font-size: 14px;">
-<a href="/profile/show/weter336.html"><img src="https://content.freelancehunt.com/profile/photo/50/weter336.png" width="25" height="25" class="vertical avatar img-rounded " alt="Станислав И."></a> <a href="/employer/weter336.html" class="" title="" data-original-title="Профиль weter336">Станислав Иии</a> <span title="" class="with-tooltip" data-original-title="Актуален до 28 сентября в 18:24, открыт 7 сентября в 18:26">&nbsp;
-<i class="fa fa-calendar-o"></i>
-28 сентября
-</span>
-&nbsp;<i class="fa fa-gavel"></i>
-8 ставок
-</div>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top;" class="featured" data-published="1567838548">
-<td class="left" colspan="5">
-<span class="label color-orange with-tooltip" title="" style="font-size: 70%" data-original-title="Премиум-проект"><i class="fa fa-star"></i><span class="hidden-xs"> премиум</span></span>
-<a href="https://freelancehunt.com/project/front-na-vuejs/550668.html" title="" class="visitable " data-original-title="Здравствуйте.
-Проект системы GPS мониторинга объектов. Необходимо модернизировать фронт. Написан на VUE.js
-Исходники есть, не...">Фронт на VUE.js</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/calendar-month.png" width="16" height="16" title="" class="with-tooltip" data-original-title="Долгосрочная удаленная работа">
-<img src="/static/images/fugu/fire-big.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Срочный проект">
-<p style="font-size: 14px; word-break: break-all">
-Здравствуйте.
-Проект системы GPS мониторинга объектов. Необходимо модернизировать фронт. Написан на VUE.js
-Исходники есть, необходимо в них разобраться, выполнить рефакторинг кода, внести изменения, дополнить функционал. Список доработок...
-</p>
-<div style="line-height: 36px;">
-<div class="pull-right">
-</div>
-<div style="font-size: 14px;">
-<a href="/profile/show/art_sh82.html"><img src="https://content.freelancehunt.com/profile/photo/50/art_sh82.png" width="25" height="25" class="vertical avatar img-rounded " alt="Артур Ш."></a> <a href="/employer/art_sh82.html" class="" title="" data-original-title="Профиль art_sh82">Артур Шидловский</a> <span title="" class="with-tooltip" data-original-title="Актуален до 13 сентября в 14:50, открыт 7 сентября в 09:42">&nbsp;
-<i class="fa fa-calendar-o"></i>
-13 сентября
-</span>
-&nbsp;<i class="fa fa-gavel"></i>
-6 ставок
-</div>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top;" class="featured" data-published="1567792048">
-<td class="left" colspan="5">
-<span class="label color-orange with-tooltip" title="" style="font-size: 70%" data-original-title="Премиум-проект"><i class="fa fa-star"></i><span class="hidden-xs"> премиум</span></span>
-<a href="https://freelancehunt.com/project/internet-magazin-pod-klyuch/550869.html" title="" class="visitable " data-original-title="Интернет магазин с мебелью под ключ. Дизайн и оформление главной страницы, интерактивные окна (например: контакт, мебель и тп...">Интернет магазин под ключ</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/eye.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Ставки на проект скрыты">
-<p style="font-size: 14px; word-break: break-all">
-Интернет магазин с мебелью под ключ. Дизайн и оформление главной страницы, интерактивные окна (например: контакт, мебель и тп) мебели на данный момент мало. Страница на 4 языках: польский, русский, немецкий, англиский.
-Тоесть нужно...
-</p>
-<div style="line-height: 36px;">
-<div class="pull-right">
-</div>
-<div style="font-size: 14px;">
-<a href="/profile/show/JuliaSzwed.html"><img src="https://content.freelancehunt.com/profile/photo/50/JuliaSzwed.png" width="25" height="25" class="vertical avatar img-rounded " alt="Julia S."></a> <a href="/employer/JuliaSzwed.html" class="" title="" data-original-title="Профиль JuliaSzwed">Julia Szwed</a> <span title="" class="with-tooltip" data-original-title="Актуален до 13 сентября в 19:55, открыт 6 сентября в 20:47">&nbsp;
-<i class="fa fa-calendar-o"></i>
-13 сентября
-</span>
-&nbsp;<i class="fa fa-gavel"></i>
-34 ставки
-</div>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567923023">
-<td class="left">
-<a href="https://freelancehunt.com/project/obnovlenie-sayta-internet-magazina-elektroniki-adaptatsiey/551247.html" title="" class="bigger visitable" data-original-title="Сейчас сайт работает на платформе MODX (неудобная админка).
+        Имеется бот на Laravel, который по крону синхронизирует информацию со стороннего (целевого) ресурса ...">{{ $projectData->title }}</a>
+        <a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
+        <img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
+            <div>
+                <small><span class="skill-highlight">PHP</span></small>
+                </div>
+                </td>
+                <td class="text-center project-budget">
+                    <span>
+                    <div class="text-green price with-tooltip" data-placement="top" title="" data-original-title="≈3 500₴">
+                    {{ $projectData->price }} <span>₴</span>
+                    </div>
+                    </span>
+                </td>
+                <td class="text-center hidden-xs">
+                    <a class="text-orange price" title="" href="/project/naladit-bota-na-laravel-kotoryiy-shlyot/534933.html#tab-bids" data-original-title="Получено ставок">{{ $projectData->bids }}</a>
+                </td>
+                <td class="text-center hidden-xs">
+                <div title="" class="with-tooltip" data-original-title="Открыт 13 часов 24 минуты назад">
+                    <div title="" class="with-tooltip calendar" data-original-title="7 сентября">
+                        <h2>7</h2>
+                        <h5>сен</h5>
+                    </div>
+                </div>
+                </td>
+                <td class="text-center hidden-xs" style="position: relative">
+            <div title="" class="with-tooltip calendar date-expired" data-original-title="10 сентября">
+                <h2>10</h2>
+                <h5>сен</h5>
+            </div>
+        </td>
+    </tr>
+@endForeach
 
-
-Сайт должен стать современным, удобным в использовании. Цеплять...">Обновление сайта интернет-магазина электроники с адаптацией под телефо</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small>Дизайн сайтов, Создание сайта под ключ, <span class="skill-highlight">Сопровождение сайтов</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/obnovlenie-sayta-internet-magazina-elektroniki-adaptatsiey/551247.html#tab-bids" data-original-title="Получено ставок">1</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 9 минут назад">
-<h2>09:10</h2>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="15 сентября">
-<h2>15</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567921750">
-<td class="left">
-<a href="https://freelancehunt.com/project/nuzhen-spetsialist-po-excel-sravnit/551244.html" title="" class="bigger visitable" data-original-title="Добрый день. есть задание, которое нужно сегодня и сделать.
-В файле есть 2 колонки:
-1) sku (ариткул товара)
-2) список изображ...">Нужен специалист по Excel . Сравнить 2 колонки.</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">Базы данных</span>, Прикладное программирование</small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-<div class="text-green price with-tooltip" data-placement="top" data-original-title="" title="">
-200 <span>₴</span>
-</div>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/nuzhen-spetsialist-po-excel-sravnit/551244.html#tab-bids" data-original-title="Получено ставок">4</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 31 минута назад">
-<h2>08:49</h2>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="9 сентября">
-<h2>9</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567917838">
-<td class="left">
-<a href="https://freelancehunt.com/project/skript-dlya-servisa-lizanonair/551237.html" title="" class="bigger visitable" data-original-title="Есть сервис lizaonair giveaway
-Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль
-В отклике прошу написать стоимость...">Скрипт для сервиса lizanonair</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">Веб-программирование</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/skript-dlya-servisa-lizanonair/551237.html#tab-bids" data-original-title="Получено ставок">1</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 1 час 36 минут назад">
-<h2>07:43</h2>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="15 сентября">
-<h2>15</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567907854">
-<td class="left">
-<a href="https://freelancehunt.com/project/pomenyat-slayder-na-shablone-shopify/551234.html" title="" class="bigger visitable" data-original-title="Есть два шаблона: в одном из них корявый слайдер, хочу его поменять.&nbsp;
-Исходники двух шаблонов есть. Необходимо грамотно перен...">Поменять слайдер на шаблоне Shopify</a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">Веб-программирование</span>, HTML/CSS верстка</small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/pomenyat-slayder-na-shablone-shopify/551234.html#tab-bids" data-original-title="Получено ставок">5</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 4 часа 22 минуты назад">
-<h2>04:57</h2>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="15 сентября">
-<h2>15</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567896987">
-<td class="left">
-<a href="https://freelancehunt.com/project/ispravit-kosyaki-magazine-na-prestashop/551232.html" title="" class="bigger visitable" data-original-title="Магазин мой..
-Нужна помощь в:
-1. Залить подготовленные прайсы с номенклатурой. через штатный импорт ОЧЕНЬ долго загружает...
-...">Исправить косяки в магазине на Prestashop</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">PHP</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" href="/project/ispravit-kosyaki-magazine-na-prestashop/551232.html#tab-bids">0</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 7 часов 23 минуты назад">
-<h2>01:56</h2>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="15 сентября">
-<h2>15</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567894792">
-<td class="left">
-<a href="https://freelancehunt.com/project/telegam-bot/551230.html" title="" class="bigger visitable" data-original-title="Требуется &nbsp;разработать Telegram бот по примеру этого бота : karmacoin_bot.&nbsp;
-Нужен такой же бот, но переделан под другой проек...">Telegam-bot</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/calendar-month.png" width="16" height="16" title="" class="with-tooltip" data-original-title="Долгосрочная удаленная работа">
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">Базы данных</span>, Разработка чат-ботов</small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-<div class="text-green price with-tooltip" data-placement="top" title="" data-original-title="≈1 050₴">
-3 000 <span>₽</span>
-</div>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/telegam-bot/551230.html#tab-bids" data-original-title="Получено ставок">4</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 8 часов 18 секунда назад">
-<h2>01:19</h2>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="22 сентября">
-<h2>22</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567892936">
-<td class="left">
-<a href="https://freelancehunt.com/project/sdelat-chank-filtrom-kataloga-na/551228.html" title="" class="bigger visitable" data-original-title="Есть каталог марок и моделей автомобилей, реализованный через стандартное дерево документов, например &quot;Каталог&quot; -> &quot;BMW&quot; -> &quot;...">Сделать чанк с фильтром каталога на MODX</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">Веб-программирование</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/sdelat-chank-filtrom-kataloga-na/551228.html#tab-bids" data-original-title="Получено ставок">2</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 8 часов 31 минута назад">
-<h2>00:48</h2>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="15 сентября">
-<h2>15</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567889700">
-<td class="left">
-<a href="https://freelancehunt.com/project/vyipolnit-seo-dorabotki-na-wordpress/551224.html" title="" class="bigger visitable" data-original-title="Ищу спеца по WordPress который выполнит SEO доработки.&nbsp;
-Доработки не сложные, кроме пункта с увеличением скорости загрузки ст...">Выполнить SEO доработки на WordPress</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
- <img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">PHP</span>, <span class="skill-highlight">Веб-программирование</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/vyipolnit-seo-dorabotki-na-wordpress/551224.html#tab-bids" data-original-title="Получено ставок">7</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 9 часов 25 минут назад">
-<div title="" class="with-tooltip calendar" data-original-title="7 сентября">
-<h2>7</h2>
-<h5>сен</h5>
-</div>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="12 сентября">
-<h2>12</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567884898">
-<td class="left">
-<a href="https://freelancehunt.com/project/administrator-operator-pk-call-tsentr-menedzher/551214.html" title="" class="bigger visitable" data-original-title="&nbsp;Прием &nbsp; &nbsp; входящих звонковЧто делать?
-&nbsp;Консультация &nbsp; &nbsp; по условиям работы, оформлению заказа &nbsp; &nbsp; и закрытию сделки.
-&nbsp; &nbsp; Офо...">Администратор. Оператор ПК call центр. Менеджер по работе с клиентами</a>
-<img src="/static/images/fugu/calendar-month.png" width="16" height="16" title="" class="with-tooltip" data-original-title="Долгосрочная удаленная работа">
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">Интернет-магазины и электронная коммерция</span>, Контент-менеджер, Продажи и генерация лидов</small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-<div class="text-green price with-tooltip" data-placement="top" data-original-title="" title="">
-25 000 <span>₴</span>
-</div>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/administrator-operator-pk-call-tsentr-menedzher/551214.html#tab-bids" data-original-title="Получено ставок">1</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 10 часов 45 минут назад">
-<div title="" class="with-tooltip calendar" data-original-title="7 сентября">
-<h2>7</h2>
-<h5>сен</h5>
-</div>
- </div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="28 сентября">
-<h2>28</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567883741">
-<td class="left">
-<a href="https://freelancehunt.com/project/modul-obmena-dannyih-uchyotnoy/551207.html" title="" class="bigger visitable" data-original-title="доброе время
-Модуль обмена данных с &nbsp;учётной системой GBS.Market &nbsp;в интернет-магазин на OcStore 2.3&nbsp;
-более детально в личку. ...">Модуль обмена данных с учётной системой</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small>1C, <span class="skill-highlight">Веб-программирование</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/modul-obmena-dannyih-uchyotnoy/551207.html#tab-bids" data-original-title="Получено ставок">1</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 11 часов 4 минуты назад">
-<div title="" class="with-tooltip calendar" data-original-title="7 сентября">
-<h2>7</h2>
-<h5>сен</h5>
-</div>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="14 сентября">
-<h2>14</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567880717">
-<td class="left">
-<a href="https://freelancehunt.com/project/pomosch-saytom-vordpress/551192.html" title="" class="bigger visitable" data-original-title="Помощь с сайтом Вордпресс.......................................................................................................">Помощь с сайтом Вордпресс</a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">Сопровождение сайтов</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-</span>
- </td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/pomosch-saytom-vordpress/551192.html#tab-bids" data-original-title="Получено ставок">8</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 11 часов 54 минуты назад">
-<div title="" class="with-tooltip calendar" data-original-title="7 сентября">
-<h2>7</h2>
-<h5>сен</h5>
-</div>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="14 сентября">
-<h2>14</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
-<tr style="vertical-align: top" data-published="1567875349">
-<td class="left">
-<a href="https://freelancehunt.com/project/naladit-bota-na-laravel-kotoryiy-shlyot/534933.html" title="" class="bigger visitable" data-original-title="Доброго времени суток.
-
-
-Имеется бот на Laravel, который по крону синхронизирует информацию со стороннего (целевого) ресурса ...">Наладить бота на Laravel который шлёт запросы через GuzzleHTTP</a>
-<a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
-<img src="/static/images/fugu/new-text.png" width="16" height="16" alt="Новый проект" class="new-icon with-tooltip hide vertical-top" data-original-title="" title="">
-<div>
-<small><span class="skill-highlight">PHP</span></small>
-</div>
-</td>
-<td class="text-center project-budget">
-<span>
-<div class="text-green price with-tooltip" data-placement="top" title="" data-original-title="≈3 500₴">
-10 000 <span>₽</span>
-</div>
-</span>
-</td>
-<td class="text-center hidden-xs">
-<a class="text-orange price" title="" href="/project/naladit-bota-na-laravel-kotoryiy-shlyot/534933.html#tab-bids" data-original-title="Получено ставок">11</a>
-</td>
-<td class="text-center hidden-xs">
-<div title="" class="with-tooltip" data-original-title="Открыт 13 часов 24 минуты назад">
-<div title="" class="with-tooltip calendar" data-original-title="7 сентября">
-<h2>7</h2>
-<h5>сен</h5>
-</div>
-</div>
-</td>
-<td class="text-center hidden-xs" style="position: relative">
-<div title="" class="with-tooltip calendar date-expired" data-original-title="10 сентября">
-<h2>10</h2>
-<h5>сен</h5>
-</div>
-</td>
-</tr>
 </tbody>
 </table>
 </div>

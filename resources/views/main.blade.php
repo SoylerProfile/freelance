@@ -238,7 +238,7 @@
 </tbody></table>
 </ul>
 </div>
-<a class="btn btn-default btn-sm" href="https://freelancehunt.com/mailbox" id="unread-messages-link">
+<a class="btn btn-default btn-sm" href="/mailbox" id="unread-messages-link">
 <i class="fa fa-envelope-o"></i> <span class="hidden-xs">Сообщения</span>
 <span class="label color-blue hidden" data-unread-message-count="">0</span>
 </a>

@@ -1,9 +1,9 @@
 <html lang="ru" prefix="og: http://ogp.me/ns#"><head>
 <meta charset="UTF-8">
-<title>Скрипт для сервиса lizanonair • Фриланс-проект ≡ Заказчик Евгений Бутенев</title>
+<title>Скрипт для сервиса lizanonair • Фриланс-проект ≡ Заказчик {{ $authorData->name }}</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Есть сервис lizaonair giveaway Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль В отклике. ⏩ 1 ставка на проект. ✅️ Заказчик — Евгений Бутенев">
+<meta name="description" content="Есть сервис lizaonair giveaway Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль В отклике. ⏩ 1 ставка на проект. ✅️ Заказчик — {{ $authorData->name }}">
 <meta name="author" content="freelancehunt.com">
 
 
@@ -20,10 +20,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="magic-token" content="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm9maWxlX2lkIjozMjEwODksImV4cCI6MTU2ODAxMDM1MH0.JqXprSTDeqI0rcvkJce579hwlPEqPcJfKJ6Is9f4J-k">
 <script src="https://connect.facebook.net/signals/plugins/inferredEvents.js?v=2.9.4" async=""></script><script src="https://connect.facebook.net/signals/config/1341617005966925?v=2.9.4&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="application/ld+json">[{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"/","name":"Freelancehunt"}},{"@type":"ListItem","position":2,"item":{"@id":"/projects","name":"Фриланс-проекты"}},{"@type":"ListItem","position":3,"item":{"@id":"https://freelancehunt.com/project/skript-dlya-servisa-lizanonair/551237.html","name":"Скрипт для сервиса lizanonair"}}]}]</script>
-<meta property="og:title" content="Скрипт для сервиса lizanonair • Фриланс-проект ≡ Заказчик Евгений Бутенев">
-<meta name="twitter:title" content="Скрипт для сервиса lizanonair • Фриланс-проект ≡ Заказчик Евгений Бутенев">
-<meta property="og:description" content="Есть сервис lizaonair giveaway Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль В отклике. ⏩ 1 ставка на проект. ✅️ Заказчик — Евгений Бутенев">
-<meta name="twitter:description" content="Есть сервис lizaonair giveaway Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль В отклике. ⏩ 1 ставка на проект. ✅️ Заказчик — Евгений Бутенев">
+<meta property="og:title" content="Скрипт для сервиса lizanonair • Фриланс-проект ≡ Заказчик {{ $authorData->name }}">
+<meta name="twitter:title" content="Скрипт для сервиса lizanonair • Фриланс-проект ≡ Заказчик {{ $authorData->name }}">
+<meta property="og:description" content="Есть сервис lizaonair giveaway Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль В отклике. ⏩ 1 ставка на проект. ✅️ Заказчик — {{ $authorData->name }}">
+<meta name="twitter:description" content="Есть сервис lizaonair giveaway Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль В отклике. ⏩ 1 ставка на проект. ✅️ Заказчик — {{ $authorData->name }}">
 <meta property="og:image" content="https://freelancehunt.com/static/images/freelancehunt-header-ru.png">
 <meta name="twitter:image" content="https://freelancehunt.com/static/images/logo/freelancehunt-ru@2x.png">
 <meta property="og:type" content="website">
@@ -237,7 +237,7 @@
 </tbody></table>
 </ul>
 </div>
-<a class="btn btn-default btn-sm" href="https://freelancehunt.com/mailbox" id="unread-messages-link">
+<a class="btn btn-default btn-sm" href="/mailbox" id="unread-messages-link">
 <i class="fa fa-envelope-o"></i> <span class="hidden-xs">Сообщения</span>
 <span class="label color-blue hidden" data-unread-message-count="">0</span>
 </a>
@@ -303,12 +303,13 @@
 </div>
 <div class="row">
 <div class="col-md-12">
+    <span class="price-tag pull-right with-tooltip" data-original-title="" title=""><span data-freelancehunt-selector="price">{{ $projectData->price }} ₴</span></span>
 <h1 style="margin-bottom: 5px; margin-top: 0">
 <span class="hidden-xs">
-<a href="/projects">Фриланс проекты</a> › Скрипт для сервиса lizanonair
+<a href="/projects">Фриланс проекты</a> › {{ $projectData->title }}
 </span>
 <span class="visible-xs">
-<span data-freelancehunt-selector="title">Скрипт для сервиса lizanonair</span>
+<span data-freelancehunt-selector="title">{{ $projectData->title }}</span>
 </span>
 <a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" class="with-tooltip" width="16" height="16" title="" data-original-title="Предпочтение отдается сотрудничеству через Сейф"></a>
 </h1>
@@ -326,7 +327,7 @@
 <div class="well">
 <div class="linkify-marker img-responsive-container">
 <span data-freelancehunt-selector="description">
-<p>Есть сервис lizaonair giveaway<br>Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль<br>В отклике прошу написать стоимость срок&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+<p>{{ $projectData->description }}</p>
 </span>
 </div>
 </div>
@@ -554,15 +555,15 @@
 <div>
 <table>
 <tbody><tr style="vertical-align: middle;">
-<td style="vertical-align: middle"><a href="/employer/bytenevevgeniy.html"><div style="background-image: url(https://content.freelancehunt.com/profile/photo/50/bytenevevgeniy.png);" class="img-rounded avatar-container-50"><div data-presence-for-profile-id="629882" class="profile-status offline with-tooltip" title="" data-original-title="Был на сервисе 48 минут назад"></div></div></a></td>
+<td style="vertical-align: middle"><a href="/employer/bytenevevgeniy.html"><div style="background-image: url(https://content.freelancehunt.com/profile/photo/50/{{ $authorData->login }}.png);" class="img-rounded avatar-container-50"><div data-presence-for-profile-id="629882" class="profile-status offline with-tooltip" title="" data-original-title="Был на сервисе 48 минут назад"></div></div></a></td>
 <td style="padding-left: 5px">
 <span data-freelancehunt-selector="author">
-<a href="/employer/bytenevevgeniy.html" class="" title="" data-original-title="Профиль заказчика bytenevevgeniy">Евгений Бутенев</a> </span>
+<a href="/employer/{{ $authorData->login }}.html" class="" title="" data-original-title="Профиль заказчика {{ $authorData->login }}">{{ $authorData->name }}</a> </span>
 <img src="/static/images/fugu/battery-empty.png" class="with-tooltip icon-16" title="" data-original-title="Стаж работы на сервисе 2 дня 19 часов">
 <img src="/static/images/fugu/mobile-phone.png" class="with-tooltip icon-16" title="" data-original-title="Мобильный телефон проверен">
 <br>
-<img src="/static/images/flags/4x3/ru.svg" class="flag" alt="Россия">
-Россия <br>
+<img src="/static/images/flags/4x3/ru.svg" class="flag" alt="{{ $authorData->country }}">
+{{ $authorData->country }} <br>
 </td>
 </tr>
 </tbody></table>
