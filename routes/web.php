@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/projects', 'ProjectsController@index')->name('projects');
 Route::get('/project/{id}.html', 'ProjectController@index')->name('project');
+
+Route::get('/mailbox', 'MailboxController@index')->name('mailbox');
+Route::get('/mailbox/{id}', 'MailboxController@createChat')->name('createChat');
+Route::get('/mailbox/read/thread/{chat_id}', 'MailboxController@chat')->name('chat');
