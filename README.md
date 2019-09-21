@@ -1,5 +1,6 @@
 # freelance
-The freelance website, which created on Laravel 
+The freelance website, which created on Laravel.
+The main goal is to create a copy version of the real freelancehunt.
 
 -----------
 Version 0.8
@@ -11,6 +12,12 @@ Version 0.8
 5) Small problems was successfully resolved
 
 ------------
+------------
+Verstion 0.3
+
+1) Created mailbox that related on websockets
+
+-----------
 ------------
 Verstion 0.2
 
