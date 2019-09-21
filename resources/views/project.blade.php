@@ -375,7 +375,7 @@
 
 
 {{--  _МОЕ  --}}
-
+{{--TODO нужно сделать проверку, чтобы ставку не мог делать человек, который уже делал ее--}}
     @if($projectData->executor == null && $currentUserID !== $projectData->author_id)
     <div style="display: none;" id="my-bid-area">
         <form id="my-add-bid-form" method="post" action="{{ route('addBid') }}">

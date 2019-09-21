@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use App\User;
+use App\Project;
+
 use Illuminate\Http\Request;
 
 // MY
@@ -51,7 +53,10 @@ class MailboxController extends Controller
             $messagesAuthorsArrays[] = $tempArray;
         }
 
-        return view('mailboxChat', ['userId' => $userId, 'userLogin' => $userLogin, 'userName' => $userName, 'messagesAuthorsArrays' => $messagesAuthorsArrays]);
+        $project = Project::where('id', '1')->first();
+        $projectStatus = $project->finished;
+
+        return view('mailboxChat', ['userId' => $userId, 'userLogin' => $userLogin, 'userName' => $userName, 'messagesAuthorsArrays' => $messagesAuthorsArrays, 'projectStatus' => $projectStatus]);
     }
 
     function saveMessageToDB() {

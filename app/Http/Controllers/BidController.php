@@ -60,6 +60,9 @@ class BidController extends Controller
         $employee = DB::table('users')->where('id', $projectAuthorID)->update(['balance' => $employeeCurrentBalance - $projectPrice]);
         $employer = DB::table('users')->where('id', $projectExecutorID)->update(['balance' => $employerCurrentBalance + $projectPrice]);
 
+        DB::table('projects')->where('id', $projectID)->update(['finished' => 'true']);
+
+
         return redirect('mailbox/read/thread/1');
     }
 }

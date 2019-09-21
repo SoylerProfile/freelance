@@ -422,6 +422,7 @@
                     <input onclick="sendMessage()" type="button" value="Отправить сообщение">
                     <hr>
 {{--                    TODO тут нужно сделать динамические данные --}}
+                    @if($projectStatus !== 'true')
                     <div>
                         <form action="{{route('finishTheProject')}}" method="POST">
                             @csrf
@@ -429,6 +430,7 @@
                             <input type="submit" value="Проект выполнен!">
                         </form>
                     </div>
+                    @endif
 {{--                    <button type="submit" data-style="slide-left" class="btn btn-primary btn-sm ladda-button " name="myAdd" id="MyAdd-0" title="Вы можете использовать ⌘+Enter для быстрой отправки сообщения"><span class="ladda-label"><i class="fa fa-paper-plane"></i> Отправить</span><span class="ladda-spinner"></span></button>--}}
 
 
