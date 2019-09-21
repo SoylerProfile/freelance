@@ -341,34 +341,35 @@
                     <div>
                         <ul class="chat-box" id="chat-box">
 
+                            @foreach ($messagesAuthorsArrays as $messageAuthorArray)
+                                @if($messageAuthorArray[0]->author_id !== $userId)
                             <li data-message-id="20762614" data-profile-id="200943" id="message-20762614" class="arrow-box-left">
                                 <div class="avatar">
-                                    <a href="https://freelancehunt.com/employer/Dremychi.html"><div style="background-image: url(https://content.freelancehunt.com/profile/photo/50/Dremychi.png);" class="img-rounded avatar-container-25"><div data-presence-for-profile-id="200943" class="profile-status offline with-tooltip" title="" data-original-title="Был на сервисе 2 часа 18 минут назад"></div></div></a> </div>
+                                    <a href="https://freelancehunt.com/employer/{{$messageAuthorArray[1]->login}}.html"><div style="background-image: url(https://content.freelancehunt.com/profile/photo/50/{{$messageAuthorArray[1]->login}}.png);" class="img-rounded avatar-container-25"><div data-presence-for-profile-id="200943" class="profile-status offline with-tooltip" title="" data-original-title="Был на сервисе 2 часа 18 минут назад"></div></div></a> </div>
                                 <div class="info">
-                                    <a href="https://freelancehunt.com/employer/Dremychi.html" class="" title="" data-original-title="Профиль заказчика Dremychi">Андрей Шейн</a> <div class="pull-right smallest"> <a href="https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html" title="" data-original-title="Перейти к просмотру обсуждаемого проекта"><img src="/static/images/fugu/auction-hammer.png" width="16" height="16"></a>&nbsp;<time class="timeago" datetime="2019-09-14T13:13:06Z" title="" data-original-title="14 сентября в 16:13">17 часов назад</time> | <a href="#message-20762614"><i class="fa fa-anchor"></i></a>&nbsp;| <a href="/mailbox/read/thread/3477731" class="reply-form-with-quote-trigger" title="" data-original-title="Цитировать"><i class="fa fa-quote-left"></i></a></div>
+                                    <a href="https://freelancehunt.com/employer/{{$messageAuthorArray[1]->login}}.html" class="" title="" data-original-title="Профиль заказчика {{$messageAuthorArray[1]->login}}">{{$messageAuthorArray[1]->name}}</a> <div class="pull-right smallest"> <a href="https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html" title="" data-original-title="Перейти к просмотру обсуждаемого проекта"><img src="/static/images/fugu/auction-hammer.png" width="16" height="16"></a>&nbsp;<time class="timeago" datetime="2019-09-14T13:13:06Z" title="" data-original-title="14 сентября в 16:13">17 часов назад</time> | <a href="#message-20762614"><i class="fa fa-anchor"></i></a>&nbsp;| <a href="/mailbox/read/thread/3477731" class="reply-form-with-quote-trigger" title="" data-original-title="Цитировать"><i class="fa fa-quote-left"></i></a></div>
                                 </div>
-                                <h4 style="color: inherit">Сменить ссылку на сайте Wordpress и вывести товары</h4>
-                                <div style="padding-top: 5px" class="linkify-marker img-responsive-container"><p>Согласен. Знаний у меня не хватает. Там все сделано через functions.</p><p><br></p><p>Если согласен, то переведу на карту или куда удобно, после завершения.</p><p>У разработчика все работает, у меня нет) Есть доступ к этому сайту, если нужно &nbsp;<a href="https://test.msn.mk.ua/zh/zh/" class="no-external-marker" target="_blank" rel="nofollow noopener">https://test.msn.mk.ua/zh/zh/</a>&nbsp;</p><p><br></p><p>Он сейчас занят, а нужно срочно.</p></div>
+                                <div style="padding-top: 5px" class="linkify-marker img-responsive-container"><p>{{$messageAuthorArray[0]->content}}</p></div>
                                 <div class="clearfix">
                                 </div>
                                 <div class="clearfix"></div>
                             </li>
-
+                                @else
                             <li data-message-id='20763337' data-profile-id='321089' id='message-20763337' class='arrow-box-right collapse in'>
                                 <div class='avatar'>
-                                    <a href='https://freelancehunt.com/freelancer/Soyler.html'><div style='background-image: url(https://content.freelancehunt.com/profile/photo/50/Soyler.png);' class='img-rounded avatar-container-25'><div data-presence-for-profile-id='321089' class='profile-status online with-tooltip' title='' data-original-title='Сейчас онлайн'></div></div></a> </div>
+                                    <a href='https://freelancehunt.com/freelancer/{{$messageAuthorArray[1]->login}}.html'><div style='background-image: url(https://content.freelancehunt.com/profile/photo/50/{{$messageAuthorArray[1]->login}}.png);' class='img-rounded avatar-container-25'><div data-presence-for-profile-id='321089' class='profile-status online with-tooltip' title='' data-original-title='Сейчас онлайн'></div></div></a> </div>
                                 <div class="info">
-                                    <a href='https://freelancehunt.com/freelancer/Soyler.html' class='' title='' data-original-title='Профиль фрилансера Soyler'>Александр Сивченко</a> <div class='pull-right smallest'> <a href='https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html' title='' data-original-title='Перейти к просмотру обсуждаемого проекта'><img src='/static/images/fugu/auction-hammer.png' width='16' height='16'></a>&nbsp;<time class='timeago' datetime='2019-09-14T14:16:48Z' title='' data-original-title='14 сентября в 17:16'>16 часов назад</time> | <a href='#message-20763337'><i class='fa fa-anchor'></i></a></div>
+                                    <a href='https://freelancehunt.com/freelancer/{{$messageAuthorArray[1]->login}}.html' class='' title='' data-original-title='Профиль фрилансера {{$messageAuthorArray[1]->login}}'>{{$messageAuthorArray[1]->name}}</a> <div class='pull-right smallest'> <a href='https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html' title='' data-original-title='Перейти к просмотру обсуждаемого проекта'><img src='/static/images/fugu/auction-hammer.png' width='16' height='16'></a>&nbsp;<time class='timeago' datetime='2019-09-14T14:16:48Z' title='' data-original-title='14 сентября в 17:16'>16 часов назад</time> | <a href='#message-20763337'><i class='fa fa-anchor'></i></a></div>
                                 </div>
-                                <div style='padding-top: 5px' class='linkify-marker img-responsive-container'><p>Извините, я чет не въезжаю. Попробуйте попросить кого-то другого.</p></div>
+                                <div style='padding-top: 5px' class='linkify-marker img-responsive-container'><p>{{$messageAuthorArray[0]->content}}</p></div>
                                 <div class='clearfix'>
                                 </div>
                                 <div class='clearfix'></div>
                             </li>
-
+                                @endif
+                            @endforeach
                         </ul>
                     </div>
-
 
                     <script>
                         let conn = new WebSocket('ws://localhost:8081');
@@ -379,35 +380,55 @@
 
                         conn.onmessage = function(e) {
                             let chat = $('#chat-box');
-                            let message = e.data;
+                            let data = e.data;
+                            chat.append(data);
+                            console.log('Получены данные: ' + e.data);
+                        };
+
+
+                        //TODO these should be refactored
+                        function sendMessage() {
+                            let message = $('#inputArea').val();
                             let data = "<li data-message-id='20763337' data-profile-id='321089' id='message-20763337' class='arrow-box-right collapse in'>\n" +
                                 "                                <div class='avatar'>\n" +
-                                "                                    <a href='https://freelancehunt.com/freelancer/Soyler.html'><div style='background-image: url(https://content.freelancehunt.com/profile/photo/50/Soyler.png);' class='img-rounded avatar-container-25'><div data-presence-for-profile-id='321089' class='profile-status online with-tooltip' title='' data-original-title='Сейчас онлайн'></div></div></a> </div>\n" +
+                                "                                    <a href='https://freelancehunt.com/freelancer/{{$userLogin}}.html'><div style='background-image: url(https://content.freelancehunt.com/profile/photo/50/{{$userLogin}}.png);' class='img-rounded avatar-container-25'><div data-presence-for-profile-id='321089' class='profile-status online with-tooltip' title='' data-original-title='Сейчас онлайн'></div></div></a> </div>\n" +
                                 "                                <div class=\"info\">\n" +
-                                "                                    <a href='https://freelancehunt.com/freelancer/Soyler.html' class='' title='' data-original-title='Профиль фрилансера Soyler'>Александр Сивченко</a> <div class='pull-right smallest'> <a href='https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html' title='' data-original-title='Перейти к просмотру обсуждаемого проекта'><img src='/static/images/fugu/auction-hammer.png' width='16' height='16'></a>&nbsp;<time class='timeago' datetime='2019-09-14T14:16:48Z' title='' data-original-title='14 сентября в 17:16'>16 часов назад</time> | <a href='#message-20763337'><i class='fa fa-anchor'></i></a></div>\n" +
+                                "                                    <a href='https://freelancehunt.com/freelancer/{{$userLogin}}.html' class='' title='' data-original-title='Профиль фрилансера {{$userLogin}}'>{{$userName}}</a> <div class='pull-right smallest'> <a href='https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html' title='' data-original-title='Перейти к просмотру обсуждаемого проекта'><img src='/static/images/fugu/auction-hammer.png' width='16' height='16'></a>&nbsp;<time class='timeago' datetime='2019-09-14T14:16:48Z' title='' data-original-title='14 сентября в 17:16'>16 часов назад</time> | <a href='#message-20763337'><i class='fa fa-anchor'></i></a></div>\n" +
                                 "                                </div>\n" +
                                 "                                <div style='padding-top: 5px' class='linkify-marker img-responsive-container'><p>" + message + "</p></div>\n" +
                                 "                                <div class='clearfix'>\n" +
                                 "                                </div>\n" +
                                 "                                <div class='clearfix'></div>\n" +
                                 "                            </li>";
-                            chat.append(data);
-                            console.log('Получены данные: ' + e.data);
-                        };
+                            conn.send(data);
 
-                        function sendMessage() {
-                            let message = $('#inputArea').val();
-                            conn.send(message);
+                            $('#messageForm').submit(function (e) {
+                                e.preventDefault();
+                            });
+
                         }
 
                     </script>
 
 
-                    <input type="text" id="inputArea">
+                    <form id="messageForm" method="POST" action="{{ route('saveMessage') }}">
+                        @csrf
+                        <input type="hidden" name="author_id" value="{{$userId}}">
+                        <input type="hidden" name="chat_id" value="1">
+                        <input type="text" name="content" id="inputArea" placeholder="Введите ваше сообщение...">
+                        <input type="submit">
+                    </form>
+
                     <input onclick="sendMessage()" type="button" value="Отправить сообщение">
-
-
-
+                    <hr>
+{{--                    TODO тут нужно сделать динамические данные --}}
+                    <div>
+                        <form action="{{route('finishTheProject')}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="projectID" value="1">
+                            <input type="submit" value="Проект выполнен!">
+                        </form>
+                    </div>
 {{--                    <button type="submit" data-style="slide-left" class="btn btn-primary btn-sm ladda-button " name="myAdd" id="MyAdd-0" title="Вы можете использовать ⌘+Enter для быстрой отправки сообщения"><span class="ladda-label"><i class="fa fa-paper-plane"></i> Отправить</span><span class="ladda-spinner"></span></button>--}}
 
 

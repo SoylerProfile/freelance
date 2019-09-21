@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('login');
             $table->string('email')->unique();
             $table->string('profile_type');
+            $table->integer('balance')->default('0');
             $table->string('city')->default('');
             $table->string('country')->default('');
             $table->string('date_of_birth')->default('');

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="2ad32df3-aa5b-413f-bab0-b20cf25ac9ac" name="freelance" url="http://vh174.timeweb.ru">
-        <fileTransfer host="vh174.timeweb.ru" port="21">
+      <webServer id="2ad32df3-aa5b-413f-bab0-b20cf25ac9ac" name="freelance" url="http://eroticfragrance.com">
+        <fileTransfer host="eroticfragrance.com" port="21" rootFolder="/public_html">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Message extends Model
+class Bid extends Model
 {
     protected $fillable = [
-        'author_id', 'chat_id', 'content',
+        'project_id', 'author_id', 'price', 'comment'
     ];
 }
