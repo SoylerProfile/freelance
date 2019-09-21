@@ -9,7 +9,11 @@
 
 <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet" type="text/css"/>
 
-
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous">
+    </script>
 
 <link rel="icon" href="data:image/png;base64,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" type="image/png">
 <link rel="apple-touch-icon" sizes="57x57" href="/static/images/apple-icon-57x57.png">
@@ -356,17 +360,124 @@
 </a>
 </li>
 </ul>
+
+
 <div class="tab-content">
 <div class="tab-pane active" id="tab-bids">
 <div style="margin: 15px 15px 15px 15px" class="clearfix">
-<a class="with-tooltip btn btn-primary btn-lg pull-left" data-placement="right" id="add-bid" data-original-title="" title=""><i class="fa fa-gavel"></i> Сделать ставку</a>
-<div class="clearfix"></div>
+
+
+
+
+
+
+
+
+
+{{--  _МОЕ  --}}
+
+    @if($projectData->executor == null && $currentUserID !== $projectData->author_id)
+    <div style="display: none;" id="my-bid-area">
+        <form id="my-add-bid-form" method="post" action="{{ route('addBid') }}">
+            @csrf
+            <input type="hidden" name="project_id" value="1">
+            <input type="hidden" name="author_id" value="{{$currentUserID}}">
+            <input type="number" name="price" placeholder="Цена">
+            <input type="text" name="comment" placeholder="Комментарий">
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+    <button id="my-add-bid">Сделать ставку</button>
+    @endif
+
+    <div id="all-bids">
+        @foreach($bidsAuthorsData as $bidAuthorData)
+            <?php
+                $bidData = $bidAuthorData[0];
+                $bidAuthorData = $bidAuthorData[1];
+            ?>
+        <li id="bid-5796503" class="clearfix  opacity-90" data-date="2019-09-17 10:19:27" data-rating="335" data-amount="{{$bidData->price}}" data-days="3" data-lastactivity="1568725567">
+            <div class="pull-right bid-conditions">
+                @if($authorData->id == $currentUserID)
+                    <div>
+                        <form action="{{ route('chooseExecutor') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="projectID" value="{{ $projectData->id}}">
+                            <input type="hidden" name="executorID" value="{{ $bidAuthorData->id }}">
+                            <input type="submit" value="Выбрать исполнителя">
+                        </form>
+                    </div>
+                @endif
+                <span style="margin-left: 4px" class="label label-blue with-tooltip" title="" data-placement="left" data-original-title="Время выполнения">30 дней</span><span style="margin-left: 4px" class="label label-green with-tooltip" data-placement="right" title="" data-original-title="Стоимость работы ">{{$bidData->price}} ₴</span><a target="_blank" href="/service/safe"><img src="/static/images/fugu/safe.png" title="" class="with-tooltip" style="vertical-align: middle; margin-left: 4px" data-original-title="Предпочитаю работать через Сейф"></a><span style="margin-left: 4px" class="label label-default with-tooltip" data-placement="right" title="" data-original-title="Кто оплачивает комиссию за Сейф">фрилансер 0%</span> </div>
+            <table>
+                <tbody><tr>
+                    <td class="vertical-middle">
+                        <a href="/freelancer/{{$bidAuthorData->login}}.html"><div style="background-image: url(https://content.freelancehunt.com/profile/photo/50/{{$bidAuthorData->login}}.png);" class="img-rounded avatar-container-50"><div data-presence-for-profile-id="416055" class="profile-status offline with-tooltip" title="" data-original-title="Был на сервисе 5 часов 56 минут назад"></div></div></a> </td>
+                    <td style="padding-left: 0.5em;">
+                        <a href="/freelancer/{{$bidAuthorData->login}}.html" class="bigger" title="" data-original-title="Профиль фрилансера {{$bidAuthorData->login}}">{{$bidAuthorData->name}}</a> <img src="/static/images/fugu/battery--plus.png" class="with-tooltip icon-16" title="" data-original-title="Стаж работы на сервисе более года">
+                        <img src="/static/images/fugu/mobile-phone.png" class="with-tooltip icon-16" title="" data-original-title="Мобильный телефон проверен">
+                        <a href="/freelancer/{{$bidAuthorData->login}}.html#portfolio" data-popover-url="/showcase/dofetchsnippets/profile/{{$bidAuthorData->id}}/login/{{$bidAuthorData->login}}/limit/2" title="" target="_blank" class="marker-no-tooltip" data-original-title="22 работы в портфолио">
+                            <img src="/static/images/fugu/palette.png" class="with-tooltip icon-16" style="vertical-align: text-bottom" data-original-title="" title=""></a>
+                        <br>
+                        <span class="what-is-flicks nowrap flicks with-tooltip" title="" data-title="Что означает ваш рейтинг?" data-content="Чтобы иметь возможность оценить пользователей сервиса, мы учитываем всю вашу активность и высчитываем интегральный рейтинг во фликах, который влияет на ваше место в общем рейтинге и рейтинге в категориях. О методике подсчета вы можете подробнее прочитать в <a href=&quot;https://feedback.freelancehunt.com/topics/639-rejting/&quot;>Базе знаний</a>." data-original-title="Чтобы иметь возможность оценить пользователей сервиса, мы учитываем их активность, отзывы и репутацию и высчитываем интегральный рейтинг. Чем больше рейтинг — тем лучше. "><i class="fa fa-signal"></i>&nbsp;335</span>&nbsp;
+                    </td>
+                </tr>
+                </tbody></table>
+            <div>
+                <p class="linkify-marker" style="padding-top: 5px;">
+                    {{$bidData->comment}}
+                </p>
+            </div>
+            <div class="flex-bottom-container">
+                <div class="bid-actions-bar">
+                </div>
+                <div class="time"><span class="smallest"><img src="/static/images/flags/4x3/ua.svg" class="flag" alt="Украина"> Херсон&nbsp;| 17 сентября в 10:19&nbsp;| <a href="https://freelancehunt.com/project/lidogeneratsiya-privlechenie-tselevoy-auditorii/555177.html#bid-5796503"><i class="fa fa-anchor"></i></a></span></div>
+            </div>
+        </li>
+        @endforeach
+    </div>
+
+    <script>
+
+        $('#my-add-bid').click(function () {
+            $('#my-bid-area').css('display', 'block');
+            $('#my-add-bid').css('display', 'none');
+        });
+
+
+
+    </script>
+
+{{--  МОЕ_  --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="clearfix">
+
+</div>
+
 <div id="add-bid-form" class="collapse ">
 <hr class="divider">
 <form action="/project/skript-dlya-servisa-lizanonair/551237.html" method="post" id="addbid" class="form-horizontal">
 <input type="hidden" id="qf:addbid" name="_qf__addbid">
 <input type="hidden" name="qf:token" id="qf:token-0" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpcCI6IjM3LjUzLjIyNi4xMyIsImV4cCI6MTU2NzkyNzU1MH0._-bBm7Mvg6Xk0NDUhlwlUHnbQ1MOmdOL4QPvTwQ4ppU">
 <fieldset>
+
 
 <div class="form-group">
 <label class="control-label col-sm-3 bold">Стоимость</label>

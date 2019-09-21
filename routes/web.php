@@ -19,5 +19,40 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/projects', 'ProjectsController@index')->name('projects');
-Route::get('/project/{id}.html', 'ProjectController@index')->name('project');
+// PROJECTS
+
+Route::get('/projects', 'ProjectsController@index')
+    ->name('projects')
+    ->middleware('auth');
+
+Route::get('/project/{id}.html', 'ProjectController@index')
+    ->name('project')
+    ->middleware('auth');
+
+// MAILBOX
+
+Route::get('/mailbox', 'MailboxController@index')
+    ->name('mailbox')
+    ->middleware('auth');
+
+Route::get('/mailbox/{id}', 'MailboxController@createChat')
+    ->name('createChat')
+    ->middleware('auth');
+
+Route::get('/mailbox/read/thread/{chat_id}', 'MailboxController@chat')
+    ->name('chat')
+    ->middleware('auth');
+
+Route::post('saveMessage', 'MailboxController@saveMessageToDB')->name('saveMessage');
+
+// PAGES
+
+Route::get('employers', 'EmployersController@index')->name('employers');
+
+// ETC
+
+Route::post('addBid', 'BidController@addBid')->name('addBid');
+
+Route::post('chooseExecutor', 'ProjectController@chooseExecutor')->name('chooseExecutor');
+
+Route::post('finishTheProject', 'BidController@finishTheProject')->name('finishTheProject');
