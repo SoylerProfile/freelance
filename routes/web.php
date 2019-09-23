@@ -65,3 +65,11 @@ Route::post('chooseExecutor', 'ProjectController@chooseExecutor')
 Route::post('finishTheProject', 'BidController@finishTheProject')
     ->name('finishTheProject')
     ->middleware('auth');
+
+Route::get('createProject', 'ProjectController@createProject')
+    ->name('createProject')
+    ->middleware('auth');
+
+Route::post('createProjectSave', 'ProjectController@createProjectSave')
+    ->name('createProjectSave')
+    ->middleware('auth');

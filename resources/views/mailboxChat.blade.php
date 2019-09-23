@@ -342,7 +342,7 @@
                         <ul class="chat-box" id="chat-box">
 
                             @foreach ($messagesAuthorsArrays as $messageAuthorArray)
-                                @if($messageAuthorArray[0]->author_id !== $userId)
+                                @if($messageAuthorArray[0]->author_id !== $currentUser->id)
                             <li data-message-id="20762614" data-profile-id="200943" id="message-20762614" class="arrow-box-left">
                                 <div class="avatar">
                                     <a href="https://freelancehunt.com/employer/{{$messageAuthorArray[1]->login}}.html"><div style="background-image: url(https://content.freelancehunt.com/profile/photo/50/{{$messageAuthorArray[1]->login}}.png);" class="img-rounded avatar-container-25"><div data-presence-for-profile-id="200943" class="profile-status offline with-tooltip" title="" data-original-title="Был на сервисе 2 часа 18 минут назад"></div></div></a> </div>
@@ -385,15 +385,14 @@
                             console.log('Получены данные: ' + e.data);
                         };
 
-
                         //TODO these should be refactored
                         function sendMessage() {
                             let message = $('#inputArea').val();
                             let data = "<li data-message-id='20763337' data-profile-id='321089' id='message-20763337' class='arrow-box-right collapse in'>\n" +
                                 "                                <div class='avatar'>\n" +
-                                "                                    <a href='https://freelancehunt.com/freelancer/{{$userLogin}}.html'><div style='background-image: url(https://content.freelancehunt.com/profile/photo/50/{{$userLogin}}.png);' class='img-rounded avatar-container-25'><div data-presence-for-profile-id='321089' class='profile-status online with-tooltip' title='' data-original-title='Сейчас онлайн'></div></div></a> </div>\n" +
+                                "                                    <a href='https://freelancehunt.com/freelancer/{{$currentUser->login}}.html'><div style='background-image: url(https://content.freelancehunt.com/profile/photo/50/{{$currentUser->login}}.png);' class='img-rounded avatar-container-25'><div data-presence-for-profile-id='321089' class='profile-status online with-tooltip' title='' data-original-title='Сейчас онлайн'></div></div></a> </div>\n" +
                                 "                                <div class=\"info\">\n" +
-                                "                                    <a href='https://freelancehunt.com/freelancer/{{$userLogin}}.html' class='' title='' data-original-title='Профиль фрилансера {{$userLogin}}'>{{$userName}}</a> <div class='pull-right smallest'> <a href='https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html' title='' data-original-title='Перейти к просмотру обсуждаемого проекта'><img src='/static/images/fugu/auction-hammer.png' width='16' height='16'></a>&nbsp;<time class='timeago' datetime='2019-09-14T14:16:48Z' title='' data-original-title='14 сентября в 17:16'>16 часов назад</time> | <a href='#message-20763337'><i class='fa fa-anchor'></i></a></div>\n" +
+                                "                                    <a href='https://freelancehunt.com/freelancer/{{$currentUser->login}}.html' class='' title='' data-original-title='Профиль фрилансера {{$currentUser->login}}'>{{$currentUser->name}}</a> <div class='pull-right smallest'> <a href='https://freelancehunt.com/project/smenit-ssyilku-na-sayte-wordpress/554612.html' title='' data-original-title='Перейти к просмотру обсуждаемого проекта'><img src='/static/images/fugu/auction-hammer.png' width='16' height='16'></a>&nbsp;<time class='timeago' datetime='2019-09-14T14:16:48Z' title='' data-original-title='14 сентября в 17:16'>16 часов назад</time> | <a href='#message-20763337'><i class='fa fa-anchor'></i></a></div>\n" +
                                 "                                </div>\n" +
                                 "                                <div style='padding-top: 5px' class='linkify-marker img-responsive-container'><p>" + message + "</p></div>\n" +
                                 "                                <div class='clearfix'>\n" +
@@ -409,11 +408,10 @@
                         }
 
                     </script>
-
-
+{{--                    todo сделать динамические данные  --}}
                     <form id="messageForm" method="POST" action="{{ route('saveMessage') }}">
                         @csrf
-                        <input type="hidden" name="author_id" value="{{$userId}}">
+                        <input type="hidden" name="author_id" value="{{$currentUser->id}}">
                         <input type="hidden" name="chat_id" value="1">
                         <input type="text" name="content" id="inputArea" placeholder="Введите ваше сообщение...">
                         <input type="submit">

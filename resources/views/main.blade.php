@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru" prefix="og: http://ogp.me/ns#"><head>
 <meta charset="UTF-8">
-<title>Freelancehunt.com</title>
+<title>{{$sasha}}</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ведущий украинский сервис для поиска удаленной работы и фриланс проектов. От статьи для сайта про бобров до социальной сети нового поколения. На нашей фриланс бирже вы найдете профессиональных исполнителей и честных заказчиков.">
@@ -263,8 +263,8 @@
 </div>
 <div class="btn-group">
 <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#" id="my-profile">
-<img src="https://content.freelancehunt.com/profile/photo/50/Soyler.png" width="16" height="16" class="vertical avatar avatar-small-border">
-<span id="profile-logged-in" data-is-send-pm-audio-notify="0" class="hidden-xs">Soyler</span>
+<img src="https://content.freelancehunt.com/profile/photo/50/{{$currentUser->login}}.png" width="16" height="16" class="vertical avatar avatar-small-border">
+<span id="profile-logged-in" data-is-send-pm-audio-notify="0" class="hidden-xs">{{$currentUser->login}}</span>
 <span class="label color-blue hidden"></span>
 <span class="caret"></span>
 </a>
@@ -284,12 +284,16 @@
 </div>
 
 <div class="pull-right hidden-xs top-menu">
-<a href="/projects?skills[]=28&amp;skills[]=1&amp;skills[]=86&amp;skills[]=99&amp;skills[]=129&amp;skills[]=68&amp;skills[]=45&amp;skills[]=78" class="btn btn-success"><i class="fa fa-gavel"></i>&nbsp;Проекты</a>
+ @if($currentUser->profile_type == 'employee')
+ <a href="/createProject" class="btn btn-success"><i class="fa fa-trophy"></i>&nbsp;Создать проект</a>
+ @endif()
+ <a href="/projects?skills[]=28&amp;skills[]=1&amp;skills[]=86&amp;skills[]=99&amp;skills[]=129&amp;skills[]=68&amp;skills[]=45&amp;skills[]=78" class="btn btn-success"><i class="fa fa-gavel"></i>&nbsp;Проекты</a>
 <a href="/contests" class="btn btn-success"><i class="fa fa-trophy"></i>&nbsp;Конкурсы</a>
 <a href="/employers" class="btn btn-success"><i class="fa fa-briefcase"></i>&nbsp;Заказчики</a>
 <a href="/freelancers" class="btn btn-success"><i class="fa fa-users"></i><span class="hidden-sm">&nbsp;Все фрилансеры</span></a>
 </div>
 <div class="pull-right visible-xs top-menu">
+<a href="/createProject" class="btn btn-success" title="" data-original-title="Создать проект"><i class="fa fa-trophy"></i></a>
 <a href="/projects?skills[]=28&amp;skills[]=1&amp;skills[]=86&amp;skills[]=99&amp;skills[]=129&amp;skills[]=68&amp;skills[]=45&amp;skills[]=78" class="btn btn-success" title="" data-original-title="Проекты"><i class="fa fa-gavel"></i></a>
 <a href="/contests" class="btn btn-success" title="" data-original-title="Конкурсы"><i class="fa fa-trophy"></i></a>
 <a href="/freelancers" class="btn btn-success" title="" data-original-title="Все фрилансеры"><i class="fa fa-users"></i></a>
@@ -1294,9 +1298,9 @@ Windows
 <tbody>
     <tr style="vertical-align: middle; padding-bottom: 2px; height: 40px">
         <td style="width: 50px">
-<a href="/profile/show/Artemkins.html"><img src="https://content.freelancehunt.com/profile/photo/50/Soyler.png" width="50" height="50" class="vertical avatar img-rounded " alt="Артем Яцук"></a> </td>
+<a href="/profile/show/Artemkins.html"><img src="https://content.freelancehunt.com/profile/photo/50/{{$currentUser->login}}.png" width="50" height="50" class="vertical avatar img-rounded " alt="Артем Яцук"></a> </td>
 <td class="text-left">
-<a href="/freelancer/Artemkins.html" title="" data-original-title="Просмотр профиля фрилансера Александр Сивченко (Soyler)">Александр Сивченко</a>
+<a href="/freelancer/Artemkins.html" title="" data-original-title="Просмотр профиля фрилансера {{$currentUser->name}} ({{$currentUser->login}})">{{$currentUser->name}}</a>
 <div class="smaller">Web-разработка</div>
 </td>
 <td class="text-top hidden-xs" style="text-align: right">

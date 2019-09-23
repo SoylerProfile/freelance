@@ -19,29 +19,13 @@ class MailboxController extends Controller
 	}
 
 	function createChat($id) {
-        $user = User::where('id', $id)->first();
-        $user2 = Auth::user()->getAuthPassword();
-
-        return $user2;
-
-        echo "<pre>";
-        var_dump($user);
+        // тут должна быть логика создания чата
     }
 
     function chat($chatId) {
 	    //$messageId
         //$chatId
         $messages = Message::all()->where('chat_id', '1');
-        $messageAuthorData = [
-
-        ];
-//        echo "<pre>";
-//        print_r($messages);
-//        die('Ok');
-	    $userId = Auth::id();
-	    $user = User::where('id', $userId)->first();
-	    $userLogin = $user->login;
-	    $userName = $user->name;
 
         // Передаем массив, в котором находятся массивы, в которых находятся объекты. array(array($message1, $authorData1), array($message2, $authorData2));
         $messagesAuthorsArrays = array();
@@ -56,17 +40,20 @@ class MailboxController extends Controller
         $project = Project::where('id', '1')->first();
         $projectStatus = $project->finished;
 
-        return view('mailboxChat', ['userId' => $userId, 'userLogin' => $userLogin, 'userName' => $userName, 'messagesAuthorsArrays' => $messagesAuthorsArrays, 'projectStatus' => $projectStatus]);
+        return view('mailboxChat', [
+            'messagesAuthorsArrays' => $messagesAuthorsArrays,
+            'projectStatus' => $projectStatus
+        ]);
     }
 
-    function saveMessageToDB() {
+    function saveMessageToDB(Request $request) {
 	    Message::create([
-	        'author_id' => $_POST['author_id'],
-            'chat_id' => $_POST['chat_id'],
-            'content' => $_POST['content'],
+	        'author_id' => $request->post('author_id'),
+            'chat_id' => $request->post('chat_id'),
+            'content' => $request->post('content'),
         ]);
 
-	    $chatId = $_POST['chat_id'];
+	    $chatId = $request->post('chat_id');
 
 //	    TODO here must be a real chat ID. Rename it, when it will be ready!
         return redirect("mailbox/read/thread/3477731");

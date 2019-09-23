@@ -1,6 +1,6 @@
 <html lang="ru" prefix="og: http://ogp.me/ns#"><head>
 <meta charset="UTF-8">
-<title>Скрипт для сервиса lizanonair • Фриланс-проект ≡ Заказчик {{ $authorData->name }}</title>
+<title>{{$projectData->title}} • Фриланс-проект ≡ Заказчик {{ $authorData->name }}</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Есть сервис lizaonair giveaway Нужен скрипт для tampermonkey, чтобы выпадал нужный профиль В отклике. ⏩ 1 ставка на проект. ✅️ Заказчик — {{ $authorData->name }}">
@@ -342,7 +342,7 @@
 <a href="#tab-bids" data-toggle="tab">
 <span class="hidden-xs">Ставки</span>
 <span class="visible-xs"><i class="fa fa-gavel"></i></span>
-<span id="bids_count" class="badge color-green">0</span>
+<span id="bids_count" class="badge color-green">{{count($allBids)}}</span>
 </a>
 </li>
 <li>
@@ -376,12 +376,12 @@
 
 {{--  _МОЕ  --}}
 {{--TODO нужно сделать проверку, чтобы ставку не мог делать человек, который уже делал ее--}}
-    @if($projectData->executor == null && $currentUserID !== $projectData->author_id)
+    @if($projectData->executor == null && $currentUser->id !== $projectData->author_id)
     <div style="display: none;" id="my-bid-area">
         <form id="my-add-bid-form" method="post" action="{{ route('addBid') }}">
             @csrf
-            <input type="hidden" name="project_id" value="1">
-            <input type="hidden" name="author_id" value="{{$currentUserID}}">
+            <input type="hidden" name="project_id" value="{{$projectData->id}}">
+            <input type="hidden" name="author_id" value="{{$currentUser->id}}">
             <input type="number" name="price" placeholder="Цена">
             <input type="text" name="comment" placeholder="Комментарий">
             <input type="submit" value="Добавить">
@@ -398,7 +398,7 @@
             ?>
         <li id="bid-5796503" class="clearfix  opacity-90" data-date="2019-09-17 10:19:27" data-rating="335" data-amount="{{$bidData->price}}" data-days="3" data-lastactivity="1568725567">
             <div class="pull-right bid-conditions">
-                @if($authorData->id == $currentUserID)
+                @if($authorData->id == $currentUser->id)
                     <div>
                         <form action="{{ route('chooseExecutor') }}" method="post">
                             @csrf

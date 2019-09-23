@@ -20,7 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('description');
             $table->integer('author_id');
             $table->unsignedSmallInteger('bids')->default(0);
-            $table->string('executor');
+            $table->string('executor')->default('');
             $table->string('finished')->default('false');
             $table->timestamps();
         });

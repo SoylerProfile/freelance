@@ -19,31 +19,52 @@ class ProjectController extends Controller
 		$authorData = DB::table('users')->where('id', $author_id)->first();
 
 		$bidsAuthorsData = array();
-        $allBids = Bid::all();
+        $allBids = Bid::all()->where('project_id', $projectData->id);
 		foreach ($allBids as $bid) {
             $bidAuthorData = DB::table('users')->where('id', $bid->author_id)->first();
 		    $bidsAuthorsData[] = array($bid, $bidAuthorData);
         }
-
-		$currentUserID = Auth::id();
 
     	return view('project',
             [
                 'projectData' => $projectData,
                 'authorData' => $authorData,
                 'bidsAuthorsData' => $bidsAuthorsData,
-                'currentUserID' => $currentUserID
+                'allBids' => $allBids
             ]
         );
     }
 
-    function chooseExecutor() {
-        $projectID = $_POST['projectID'];
-        $executorID = $_POST['executorID'];
+    function chooseExecutor(Request $request) {
+        $projectID = $request->post('projectID');
+        $executorID = $request->post('executorID');
 
         DB::table('projects')->where('id', $projectID)->update(['executor' => $executorID]);
 
         return redirect("mailbox/read/thread/3477731");
+    }
+
+    function createProject() {
+        $user = Auth::user();
+        if($user->profile_type !== 'employee' ) {
+            return redirect('/');
+        }
+
+        return view('createProject');
+    }
+
+    function createProjectSave(Request $request) {
+
+        if(DB::table('projects')->insert([
+            'author_id' => $request->post('author_id'),
+            'title' => $request->post('title'),
+            'description' => $request->post('description'),
+            'price' => $request->post('price'),
+            ]))
+            return redirect("/");
+        else
+            return "/";
+
     }
 
 }
