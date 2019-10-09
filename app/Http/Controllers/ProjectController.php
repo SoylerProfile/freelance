@@ -35,15 +35,6 @@ class ProjectController extends Controller
         );
     }
 
-    function chooseExecutor(Request $request) {
-        $projectID = $request->post('projectID');
-        $executorID = $request->post('executorID');
-
-        DB::table('projects')->where('id', $projectID)->update(['executor' => $executorID]);
-
-        return redirect("mailbox/read/thread/3477731");
-    }
-
     function createProject() {
         $user = Auth::user();
         if($user->profile_type !== 'employee' ) {

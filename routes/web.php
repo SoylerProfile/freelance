@@ -35,8 +35,8 @@ Route::get('/mailbox', 'MailboxController@index')
     ->name('mailbox')
     ->middleware('auth');
 
-Route::get('/mailbox/{id}', 'MailboxController@createChat')
-    ->name('createChat')
+Route::get('chat/{user_id}/{user2_id}/{chat_id}', 'MailboxController@showChat')
+    ->name('showChat')
     ->middleware('auth');
 
 Route::get('/mailbox/read/thread/{chat_id}', 'MailboxController@chat')
@@ -46,6 +46,11 @@ Route::get('/mailbox/read/thread/{chat_id}', 'MailboxController@chat')
 Route::post('saveMessage', 'MailboxController@saveMessageToDB')
     ->name('saveMessage')
     ->middleware('auth');
+
+Route::post('chooseExecutor', 'MailboxController@chooseExecutor')
+    ->name('chooseExecutor')
+    ->middleware('auth');
+
 // PAGES
 
 Route::get('employers', 'EmployersController@index')
@@ -56,10 +61,6 @@ Route::get('employers', 'EmployersController@index')
 
 Route::post('addBid', 'BidController@addBid')
     ->name('addBid')
-    ->middleware('auth');
-
-Route::post('chooseExecutor', 'ProjectController@chooseExecutor')
-    ->name('chooseExecutor')
     ->middleware('auth');
 
 Route::post('finishTheProject', 'BidController@finishTheProject')

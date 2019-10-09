@@ -412,7 +412,7 @@
                     <form id="messageForm" method="POST" action="{{ route('saveMessage') }}">
                         @csrf
                         <input type="hidden" name="author_id" value="{{$currentUser->id}}">
-                        <input type="hidden" name="chat_id" value="1">
+                        <input type="hidden" name="chat_id" value="{{$chatID}}">
                         <input type="text" name="content" id="inputArea" placeholder="Введите ваше сообщение...">
                         <input type="submit">
                     </form>
